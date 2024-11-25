@@ -14,7 +14,7 @@ class HomeController extends GetxController {
   }
 
   Future<void> fetchStocks() async {
-    const url = 'https://capstone-project-api-2-873925841072.asia-southeast2.run.app/stocks';
+    const url = 'https://project-capstone-api-873925841072.asia-southeast2.run.app/stocks';
     try {
       final response = await http.get(Uri.parse(url));
       if (response.statusCode == 200) {
@@ -34,7 +34,7 @@ class HomeController extends GetxController {
   }
 
   Future<void> fetchStockDetail(String code) async {
-    final url = 'https://capstone-project-api-2-873925841072.asia-southeast2.run.app/stocks/$code';
+    final url = 'https://project-capstone-api-873925841072.asia-southeast2.run.app/stocks/$code';
     try {
       final response = await http.get(Uri.parse(url));
       if (response.statusCode == 200) {

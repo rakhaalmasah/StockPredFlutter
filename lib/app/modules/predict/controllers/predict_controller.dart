@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 
+import '../../../routes/app_pages.dart';
+
 class PredictController extends GetxController {
   final exchangeRateController = TextEditingController();
   final biRateController = TextEditingController();
@@ -16,7 +18,7 @@ class PredictController extends GetxController {
 
       final response = await http.post(
         Uri.parse(
-          'https://capstone-project-api-2-873925841072.asia-southeast2.run.app/predict',
+          'https://project-capstone-api-873925841072.asia-southeast2.run.app/predict',
         ),
         headers: {'Content-Type': 'application/json'},
         body: jsonEncode({
@@ -28,19 +30,19 @@ class PredictController extends GetxController {
 
       if (response.statusCode == 200) {
         final result = jsonDecode(response.body);
-        Get.toNamed('/hasil-prediksi', arguments: result["prediction"]);
+        Get.toNamed(Routes.HASIL_PREDICT, arguments: result["prediction"]);
       } else {
         Get.snackbar(
           'Error',
           'Failed to fetch prediction: ${response.statusCode}',
-          snackPosition: SnackPosition.BOTTOM,
+          snackPosition: SnackPosition.TOP,
         );
       }
     } catch (e) {
       Get.snackbar(
         'Error',
         'Invalid input or network error: $e',
-        snackPosition: SnackPosition.BOTTOM,
+        snackPosition: SnackPosition.TOP,
       );
     }
   }
