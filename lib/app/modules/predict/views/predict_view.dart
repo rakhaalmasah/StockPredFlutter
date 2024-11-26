@@ -17,7 +17,7 @@ class PredictView extends GetView<PredictController> {
               controller: controller.exchangeRateController,
               decoration: const InputDecoration(
                 labelText: 'Exchange Rate (USD/IDR)',
-                labelStyle: const TextStyle(
+                labelStyle: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
                 ),
@@ -30,7 +30,7 @@ class PredictView extends GetView<PredictController> {
               controller: controller.biRateController,
               decoration: const InputDecoration(
                 labelText: 'BI Rate (%)',
-                labelStyle: const TextStyle(
+                labelStyle: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
                 ),
@@ -43,7 +43,7 @@ class PredictView extends GetView<PredictController> {
               controller: controller.inflationRateController,
               decoration: const InputDecoration(
                 labelText: 'Inflation Rate (%)',
-                labelStyle: const TextStyle(
+                labelStyle: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
                 ),
@@ -52,9 +52,41 @@ class PredictView extends GetView<PredictController> {
               keyboardType: TextInputType.number,
             ),
             const SizedBox(height: 32),
-            ElevatedButton(
-              onPressed: controller.submitPrediction,
-              child: const Text('Submit'),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                  onPressed: controller.clearForm,
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xFF1A1E57),
+                    fixedSize: const Size(120, 50),
+                  ),
+                  child: const Text(
+                    'Clear',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 17,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 20,),
+                ElevatedButton(
+                  onPressed: controller.submitPrediction,
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xFF1A1E57),
+                    fixedSize: const Size(120, 50),
+                  ),
+                  child: const Text(
+                    'Predict',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 17,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ],
             ),
           ],
         ),

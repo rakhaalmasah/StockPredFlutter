@@ -10,6 +10,13 @@ class PredictController extends GetxController {
   final biRateController = TextEditingController();
   final inflationRateController = TextEditingController();
 
+  void clearForm() {
+    exchangeRateController.clear();
+    biRateController.clear();
+    inflationRateController.clear();
+  }
+
+
   Future<void> submitPrediction() async {
     try {
       final exchangeRate = double.parse(exchangeRateController.text);
@@ -18,7 +25,7 @@ class PredictController extends GetxController {
 
       final response = await http.post(
         Uri.parse(
-          'https://project-capstone-api-873925841072.asia-southeast2.run.app/predict',
+          'https://apirevisi-447282078912.asia-southeast2.run.app/predict',
         ),
         headers: {'Content-Type': 'application/json'},
         body: jsonEncode({
