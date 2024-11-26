@@ -33,7 +33,11 @@ class HasilPredictView extends GetView<HasilPredictController> {
             final stock = controller.stocks[index];
             final stockCode = stock['code'] ?? 'Unknown Code';
             final stockLogo = stock['logo'] ?? '';
-            final stockPrediction = controller.predictions[stockCode]?.toString() ?? 'No Prediction';
+            final rawPrediction = controller.predictions[stockCode];
+            final parsedPrediction = rawPrediction != null ? num.tryParse(rawPrediction.toString()) : null;
+            final stockPrediction = (parsedPrediction != null && parsedPrediction >= 0)
+                ? parsedPrediction.toString()
+                : "Can’t Predict";
 
             return Container(
               margin: const EdgeInsets.symmetric(vertical: 5),
@@ -51,8 +55,7 @@ class HasilPredictView extends GetView<HasilPredictController> {
                         image: DecorationImage(
                           image: stockLogo.isNotEmpty
                               ? NetworkImage(stockLogo)
-                              : const AssetImage('assets/pngwing.com.png')
-                          as ImageProvider,
+                              : const AssetImage('assets/pngwing.com.png') as ImageProvider,
                           fit: BoxFit.contain,
                         ),
                       ),
