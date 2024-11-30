@@ -111,7 +111,7 @@ class DetailHomeView extends GetView<DetailHomeController> {
   Widget _buildWebsiteButton(String label, String url) {
     final completeUrl = url.startsWith('http') ? url : 'https://$url';
     return Padding(
-      padding: const EdgeInsets.only(top: 16.0), // Menambahkan jarak atas
+      padding: const EdgeInsets.only(top: 16.0),
       child: Center(
         child: ElevatedButton(
           onPressed: () async {
@@ -123,7 +123,7 @@ class DetailHomeView extends GetView<DetailHomeController> {
           },
           style: ElevatedButton.styleFrom(
             padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-            backgroundColor: Color(0xFF1A1E57), // Sesuaikan warna button
+            backgroundColor: Color(0xFF1A1E57),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8),
             ),

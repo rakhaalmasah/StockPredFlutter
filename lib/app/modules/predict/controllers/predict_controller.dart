@@ -25,7 +25,7 @@ class PredictController extends GetxController {
 
       final response = await http.post(
         Uri.parse(
-          'https://apirevisi-447282078912.asia-southeast2.run.app/predict',
+          'https://capstone-backendapi-final-500727111626.asia-southeast2.run.app/predict',
         ),
         headers: {'Content-Type': 'application/json'},
         body: jsonEncode({

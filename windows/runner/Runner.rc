@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.stockpredbangkit" "\0"
-            VALUE "FileDescription", "stock_pred" "\0"
+            VALUE "FileDescription", "StockPred" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "stock_pred" "\0"
+            VALUE "InternalName", "StockPred" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2024 com.stockpredbangkit. All rights reserved." "\0"
-            VALUE "OriginalFilename", "stock_pred.exe" "\0"
-            VALUE "ProductName", "stock_pred" "\0"
+            VALUE "OriginalFilename", "StockPred.exe" "\0"
+            VALUE "ProductName", "StockPred" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END
